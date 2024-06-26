@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "module": "node",
+        "strict": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "sourceMap": true,
+        "baseUrl": "./resources",
+        "paths": {
+            "@/*": ["./resources"],
+            "@pages/*": ["./resources/js/components/pages"],
+            "@templates/*": ["./resources/js/components/templates"],
+            "@organisms/*": ["./resources/js/components/organisms"],
+            "@molecules/*": ["./resources/js/components/molecules"],
+            "@atoms/*": ["./resources/js/components/atoms"],
+            "@stores/*": ["./resources/js/stores"],
+        }
+    },
+    "include": ["./resources/**/*.vue", "resources/**/*.vue", "resources/**/*"],
+    "exclude": []
+}
