@@ -18,28 +18,29 @@ class ClientController extends Controller
     }
 
     public function saveClients(Request $request)
-        {
-            $validator = Validator::make($request->all(), [
-                'clients' => 'required|array',
-                'clients.*' => 'required|array|filled',
-                'clients.*.title' => 'required|string',
-                'clients.*.first_name' => 'nullable|string',
-                'clients.*.initial' => 'nullable|string',
-                'clients.*.last_name' => 'required|string',
-            ]);
+    {
+        $validator = Validator::make($request->all(), [
+        'clients' => 'required|array',
+        'clients.*' => 'required|array|filled',
+        'clients.*.title' => 'required|string',
+        'clients.*.first_name' => 'nullable|string',
+        'clients.*.initial' => 'nullable|string',
+        'clients.*.last_name' => 'required|string',
+        ]);
 
-            if ($validator->fails()) {
-                return response()->json(['error' => $validator->errors()->first()], 400);
-            }
-
-            try {
-                $savedClients = $this->clientService->saveClients($request->input('clients'));
-                return PersonResource::collection($savedClients);
-            } catch (\Exception $e) {
-                Log::error('Error saving clients: ' . $e->getMessage());
-                return response()->json(['error' => 'Failed to save clients'], 500);
-            }
+        if ($validator->fails()) {
+        return response()->json(['error' => $validator->errors()->first()], 400);
         }
+
+        try {
+        $savedClients = $this->clientService->saveClients($request->input('clients'));
+        return PersonResource::collection($savedClients);
+        } catch (\Exception $e) {
+        Log::error('Error saving clients: ' . $e->getMessage());
+        return response()->json(['error' => 'Failed to save clients'], 500);
+        }
+    }
+
 
     public function saveIndividual(Request $request)
     {

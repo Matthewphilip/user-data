@@ -33,7 +33,7 @@ class ClientService
     }
 
     public function saveIndividual(array $client): \App\Models\Person
-{
-    return $this->personRepository->create($client);
-}
+    {
+        return $this->personRepository->create($client);
+    }
 }
