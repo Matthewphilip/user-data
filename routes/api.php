@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CsvController;
+use App\Http\Controllers\ClientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,6 @@ use App\Http\Controllers\CsvController;
 
 Route::post('/upload-csv', [CsvController::class, 'processCSV']);
 
-Route::post('/save-individual', [CsvController::class, 'saveIndividual']);
+Route::post('/save-individual', [ClientController::class, 'saveIndividual']);
 
-Route::post('/save-clients', [CsvController::class, 'saveClients']);
+Route::post('/save-clients', [ClientController::class, 'saveClients']);

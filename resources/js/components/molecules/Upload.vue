@@ -1,8 +1,8 @@
 <template>
-  <div class="upload">
+  <div class="upload-container">
     <Title title="Client Upload Portal" />
     <Text text="Please upload a file to display client data" />
-    <div class="input-container">
+    <div class="upload-container__file-select">
       <Input button_text="Upload" />
     </div>
     <ValidationMessage v-if="error" :validation="error" />
@@ -22,25 +22,25 @@ const clientStore = useClientStore();
 const error = computed(() => clientStore.error.error_upload);
 </script>
 
-<style>
-.upload {
+<style lang="scss">
+.upload-container {
   margin-top: 100px;
   border: 1px solid white;
   border-radius: 15px;
   background-color: #ccc;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.806);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
   padding: 20px 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
-}
 
-.input-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  &__file-select {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="client-card">
-    <div class="client-info">
+    <div class="client-card__details-container">
       <p>{{ client.title }}</p>
       <p v-if="client.first_name">{{ client.first_name }}</p>
       <p v-if="client.initial">{{ client.initial }}</p>
@@ -41,21 +41,21 @@ const handleSubmitIndividual = () => {
 };
 </script>
   
-  <style>
+<style lang="scss">
 .client-card {
   border: 1px solid white;
   border-radius: 15px;
   background-color: #ccc;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
 
-.client-info {
-  display: flex;
-  flex-direction: row;
+  &__details-container {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 .client-card p {

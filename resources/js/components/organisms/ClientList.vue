@@ -70,7 +70,6 @@ const handleSubmitAll = () => {
   border: 1px solid white;
   border-radius: 15px;
   background-color: #ccc;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.806);
   padding: 10px 20px;
 }
 

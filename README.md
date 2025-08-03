@@ -10,10 +10,15 @@ Run:
 -   frontend at localhost 8000
 
 Frontend:
-Built using Vue3 (Composition API) and Typescript with a pinia store for the state data. Used the atomic design component build structure, with responsive design mobile first styling where required. I kept the typescript data structures within the store file (as its not a big app with loads of data), for larger apps I might keep these structures in a seprarate file.
+Built using Vue3 (Composition API) and Typescript with a pinia store for the state data. Used the Atomic Design component build structure, with responsive design mobile first styling where required. I kept the typescript data structures within the store file (as its not a big app with loads of data), for larger apps I might keep these structures in a seprarate file.
 
 Backend:
-Database setup in MySql Workbench and Docker (docker compose up).
+Database setup in MySql Workbench and Docker (docker compose up). Backend code is structured using a layered architecture with the Service-Repository pattern to allow separation of concerns.
+
+-   Controller for handling HTTP requests/responses
+-   Service for handling logic
+-   Repository for Model interactions / DB operations (create)
+-   Resource to format the response data structure
 
 .env setup:
 
