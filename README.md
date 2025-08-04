@@ -12,6 +12,8 @@ Run:
 Frontend:
 Built using Vue3 (Composition API) and Typescript with a pinia store for the state data. Used the Atomic Design component build structure, with responsive design mobile first styling where required. I kept the typescript data structures within the store file (as its not a big app with loads of data), for larger apps I might keep these structures in a seprarate file.
 
+Vitest used for frontend testing, run using "npx vitest run". Example test added for uploading csv file.
+
 Backend:
 Database setup in MySql Workbench and Docker (docker compose up). Backend code is structured using a layered architecture with the Service-Repository pattern to allow separation of concerns.
 
@@ -19,6 +21,8 @@ Database setup in MySql Workbench and Docker (docker compose up). Backend code i
 -   Service for handling logic
 -   Repository for Model interactions / DB operations (create)
 -   Resource to format the response data structure
+
+Example test added for saving an individual client, run using "php artisan test --filter=SaveIndividualTest"
 
 .env setup:
 
